@@ -42,3 +42,9 @@ span {
     margin: 20px;
 }
 
+.new_sup {
+    background-color: rgb(255, 241, 44);
+    color: rgb(197, 4, 4);
+    padding: 1px;
+    border-radius: 5px;
+}
