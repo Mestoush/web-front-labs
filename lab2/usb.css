@@ -23,6 +23,10 @@ footer {
     font-size: 20px;
 }
 
+.td {
+    font-weight: bold;
+}
+
 .main {
     margin: 20px;
 }
