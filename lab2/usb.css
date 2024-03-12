@@ -30,6 +30,23 @@ span {
     border-radius: 5px;
 }
 
+li {
+    color: darkblue;
+    font-style: italic;
+}
+
+h1 {
+    color: darkgreen;
+    margin: 30px;
+    font-size: 35px;
+}
+
+h2 {
+    color: darkgreen;
+    margin: 20px;
+    font-size: 20px;
+}
+
 .main {
     margin: 20px;
 }
