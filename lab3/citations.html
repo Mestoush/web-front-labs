@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление цитаты</title>
+    <link rel="stylesheet" href="../main.css">
+    <style>
+        main {
+            color: black;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+    
+        .text {
+            font-size: 30px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        .author {
+            text-align: left;
+            font-size: 20px;
+            opacity: 0.8;
+            margin-top: 30px;
+            margin-left: 50%;
+        }
+    
+        .citation {
+            border: 1px solid black;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 10px 10px 5px #0002;
+        }
+        
+        .citation:nth-child(odd) {
+            background-color: #2c9246;
+        }
+    
+        .citation:nth-child(even) {
+            background-color: #6e4f4f;
+            color: white;
+        }
+        
+        .citation:nth-child(1) {
+            background: linear-gradient(to right top, red, orange, yellow, green, lightblue, blue, purple);
+        }
+
+        .citation:nth-child(5) {
+            border-color: #4733ff;
+            background-color: rgba(0, 0, 255, 0.445);
+        }
+
+    
+        .citation:nth-child(5n) {
+            border-color: #4CAF50;
+            background: linear-gradient(to left bottom, rgba(0, 0, 255, 0.363), green, white);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>Лабораторная работа 3</header>
+        <main>
+            <div class="citation">
+                <div class="text">
+                    Стремитесь не к успеху, а к ценностям, которые он дает.
+                </div>
+                <div class="author">
+                    Альберт Эйнштейн
+                </div>
+            </div>
+            <div class="citation">
+                <div class="text">
+                    Надо любить жизнь больше, чем смысл жизни.
+                </div>
+                <div class="author">
+                    Федор Достоевский
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    Жизнь - это то, что с тобой происходит, пока ты строишь планы.
+                </div>
+                <div class="author">
+                    Джон Леннон
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    Логика может привести Вас от пункта А к пункту Б, а воображение — куда угодно.
+                </div>
+                <div class="author">
+                    Альберт Эйнштейн
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    Начинать всегда стоит с того, что сеет сомнения.
+                </div>
+                <div class="author">
+                    Борис Стругацкий
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    Настоящая ответственность бывает только личной.
+                </div>
+                <div class="author">
+                    Фазиль Искандер
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    Неосмысленная жизнь не стоит того, чтобы жить.
+                </div>
+                <div class="author">
+                    Сократ
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    80% успеха - это появиться в нужном месте в нужное время.
+                </div>
+                <div class="author">
+                    Вуди Аллен
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    Ваше время ограничено, не тратьте его, живя чужой жизнью
+                </div>
+                <div class="author">
+                    Стив Джобс
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    Победа - это еще не все, все - это постоянное желание побеждать.
+                </div>
+                <div class="author">
+                    Винс Ломбарди, тренер по американскому футболу
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    Наука — это организованные знания, мудрость — это организованная жизнь.
+                </div>
+                <div class="author">
+                    Иммануил Кант
+                </div>
+            </div>
+            
+            <div class="citation">
+                <div class="text">
+                    В моем словаре нет слова «невозможно».
+                </div>
+                <div class="author">
+                    Наполеон Бонапарт
+                </div>
+            </div>
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
