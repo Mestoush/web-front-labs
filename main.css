@@ -7,6 +7,22 @@ body {
 
 a {
     text-decoration: none;
+    display: block;
+}
+
+a:link {
+    color: green;
+}
+
+a:visited {
+    color: darkgoldenrod;
+}
+
+a:hover {
+    color: rgb(0, 119, 119);
+    transform: scale(1.1);
+    transform-origin: left;
+    transition: .5s;
 }
 
 .main {
@@ -21,7 +37,6 @@ header {
     padding-left: 10px;
     display: flex;
     align-items: center;
-    
 }
 
 main {
