@@ -14,22 +14,22 @@
             display: inline-block;
         }
 
-        .speech-bubble.small {
-            width: 40px; /* Размер первого облачка */
+        .bubble.small {
+            width: 40px;
             height: 40px;
         }
 
-        .speech-bubble.medium {
-            width: 60px; /* Размер второго облачка */
+        .bubble.medium {
+            width: 60px;
             height: 60px;
         }
 
-        .speech-bubble.large {
-            width: 80px; /* Размер третьего облачка */
+        .bubble.large {
+            width: 80px;
             height: 80px;
         }
 
-        .speech-bubble, .speech-bubble-text {
+        .bubble, .bubble-text {
             position: absolute;
             padding: 10px;
             background-color: white;
@@ -40,7 +40,7 @@
             transition: opacity 0.3s ease-in-out;
         }
 
-        .speech-bubble-text {
+        .bubble-text {
             padding: 20px;
             width: 100px;
             height: 100px;
@@ -51,7 +51,7 @@
             align-items: center;
         }
 
-        .comic-container:hover .speech-bubble, .comic-container:hover .speech-bubble-text {
+        .comic-container:hover .bubble, .comic-container:hover .bubble-text {
             opacity: 1;
         }
     </style>
@@ -62,10 +62,10 @@
         <main>
             <div class="comic-container">
                 <img src="327476.jpg" alt="Комикс" class="comic-image">
-                <div class="speech-bubble small" style="left: 70%; top: 40%;"></div>
-                <div class="speech-bubble medium" style="left: 73%; top: 35%;"></div>
-                <div class="speech-bubble large" style="left: 77%; top: 27%;"></div>
-                <div class="speech-bubble-text" style="left: 82%; top: 15%;">Ёжик, что здесь произошло???</div>
+                <div class="bubble small" style="left: 70%; top: 40%;"></div>
+                <div class="bubble medium" style="left: 73%; top: 35%;"></div>
+                <div class="bubble large" style="left: 77%; top: 27%;"></div>
+                <div class="bubble-text" style="left: 80%; top: 15%;">Ёжик, что здесь произошло???</div>
             </div>
         </main>
         <footer> 
