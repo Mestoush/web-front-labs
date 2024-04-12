@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Комикс</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <style>
+        .comic-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .speech-bubble.small {
+            width: 40px; /* Размер первого облачка */
+            height: 40px;
+        }
+
+        .speech-bubble.medium {
+            width: 60px; /* Размер второго облачка */
+            height: 60px;
+        }
+
+        .speech-bubble.large {
+            width: 80px; /* Размер третьего облачка */
+            height: 80px;
+        }
+
+        .speech-bubble, .speech-bubble-text {
+            position: absolute;
+            padding: 10px;
+            background-color: white;
+            border: 1px solid #000;
+            border-radius: 100px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .speech-bubble-text {
+            padding: 20px;
+            width: 100px;
+            height: 100px;
+            text-align: center;
+            line-height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .comic-container:hover .speech-bubble, .comic-container:hover .speech-bubble-text {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>Комикс. Лабораторная работа 4</header>
+        <main>
+            <div class="comic-container">
+                <img src="327476.jpg" alt="Комикс" class="comic-image">
+                <div class="speech-bubble small" style="left: 70%; top: 40%;"></div>
+                <div class="speech-bubble medium" style="left: 73%; top: 35%;"></div>
+                <div class="speech-bubble large" style="left: 77%; top: 27%;"></div>
+                <div class="speech-bubble-text" style="left: 82%; top: 15%;">Ёжик, что здесь произошло???</div>
+            </div>
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
