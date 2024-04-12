@@ -31,6 +31,25 @@ a:hover {
     height: 100vh;
 }
 
+.menu {
+    border: 2px solid;
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+    transition: .5s;
+
+}
+
+.menu:hover {
+    width: 350px;
+    border-color: blueviolet;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.589);
+}
+
+.menu a {
+    transition: .5s; 
+}
+
 header {
     height: 30px;
     background-color: darkkhaki;
@@ -42,6 +61,7 @@ header {
 main {
     flex-grow: 1;
     overflow-y: auto;
+    margin-top: 10px;
 }
 
 footer {
