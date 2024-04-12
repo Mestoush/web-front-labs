@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 3</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <style>
+        div {
+            width: 300px;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            background-color: white;
+            border: 1px solid;
+            margin: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .relative {
+            position: relative;
+            left: 150px;
+            top: -130px;
+            z-index: 1;
+        }
+
+        .relative:hover {
+            z-index: 3;
+        }
+
+        .absolute {
+            position: absolute;
+            left: 300px;
+            transition: .4s;
+        }
+
+        .absolute:hover {
+            transform: scale(1.2);
+            background-color: rgba(137, 43, 226, 0.445);
+            box-shadow: 3px 3px 3px black;
+        }
+
+    </style>
+</head>
+<body>
+        <header>Лабораторная работа 4</header>
+        <main>
+            <div>static</div>
+            <div>static</div>
+            <div class="relative">relative</div>
+            <div>static</div>
+            <div>static</div>
+            <div class="absolute">absolute</div>
+            <div>static</div>
+            <div>static</div>
+            <div>static</div>
+            <div>static</div>
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+</body>
+</html>
