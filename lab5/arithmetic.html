@@ -15,6 +15,16 @@
             let result = a + b;
             alert('Сумма ' + a + ' и ' + b + " равна " + result);
         }
+
+        function ShowAuthor() {
+            let author = "Автор страницы: \nДенис Червоняк"
+            alert(author)
+        }
+
+        function ShowDeviz() {
+            let deviz = "Приветствую Вас на моей странице! \nЖелаю хорошего настроения!"
+            alert(deviz)
+        }
     </script>
     <style>
         .message {
@@ -29,16 +39,24 @@
             background-color: rgba(255, 235, 205, 0.562);
             cursor: pointer;
         }
+
+        header {
+            cursor: pointer;
+        }
+
+        footer {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="main">
-        <header>Лабораторная работа 5</header>
+        <header onclick="ShowAuthor()">Лабораторная работа 5</header>
         <main>
             <div class="message" onclick="ShowSumm()">Сколько будет 5154+7891?</div>
-            <div class="message">Узнать, кто автор страницы</div>
+            <div class="message" onclick="ShowAuthor()">Узнать, кто автор страницы</div>
         </main>
-        <footer> 
+        <footer onclick="ShowDeviz()"> 
             <hr>
             &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
         </footer>
