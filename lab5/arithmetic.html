@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 5</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <script>
+        function ShowSumm() {
+            let a = 5154;
+            let b = 7891;
+            let result = a + b;
+            alert('Сумма ' + a + ' и ' + b + " равна " + result);
+        }
+    </script>
+    <style>
+        .message {
+            border: 1px solid;
+            border-radius: 5%;
+            display: inline-block;
+            width: 150px;
+            height: 50px;
+            position: relative;
+            text-align: center;
+            margin-left: 15px;
+            background-color: rgba(255, 235, 205, 0.562);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>Лабораторная работа 5</header>
+        <main>
+            <div class="message" onclick="ShowSumm()">Сколько будет 5154+7891?</div>
+            <div class="message">Узнать, кто автор страницы</div>
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
