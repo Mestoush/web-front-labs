@@ -50,6 +50,14 @@
             let result = parseInt(inputA.value) / parseInt(inputB.value);
             alert('Частное ' + parseInt(inputA.value) + ' и ' + parseInt(inputB.value) + " равно " + result);
         }
+
+        function ChangeOutput(buttonNum, backColor, textColor, borderColor) {
+            let output = document.getElementById("output")
+            output.innerHTML = "Нажата кнопка " + buttonNum;
+            output.style.backgroundColor = backColor;
+            output.style.color = textColor;
+            output.style.borderBlockColor = borderColor
+        }
         </script>
     <style>
         .message {
@@ -88,6 +96,12 @@
         footer {
             cursor: pointer;
         }
+
+        #output {
+            border: 1px solid;
+            width: 300px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -106,6 +120,16 @@
                <div class="message" onclick="ShowProz()">Найти произведение</div>
                <div class="message" onclick="ShowDel()">Найти частное 2-х чисел</div>
            </div> 
+
+           <div>
+                <input type="button" value="Кнопка 1" onclick="ChangeOutput(1, 'red', 'yellow', 'green')">
+                <input type="button" value="Кнопка 2" onclick="ChangeOutput(2, 'black', 'lime', 'white')">
+                <input type="button" value="Кнопка 3" onclick="ChangeOutput(3, 'purple', 'lime', 'red')">
+                <input type="button" value="Кнопка 4" onclick="ChangeOutput(4, 'brown', 'white', 'black')">
+           </div>
+           
+           <div id="output"></div>
+
         </main>
         <footer onclick="ShowDeviz()"> 
             <hr>
