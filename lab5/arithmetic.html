@@ -26,19 +26,54 @@
             let deviz = "Приветствую Вас на моей странице! \nЖелаю хорошего настроения!"
             alert(deviz)
         }
-    </script>
+
+        function ShowRaz() {
+            let inputA = document.getElementById("NumberA");
+            let inputB = document.getElementById("NumberB");
+
+            let result = parseInt(inputA.value) - parseInt(inputB.value);
+            alert('Разность ' + parseInt(inputA.value) + ' и ' + parseInt(inputB.value) + " равна " + result);
+        }
+        
+        function ShowProz() {
+            let inputA = document.getElementById("NumberA");
+            let inputB = document.getElementById("NumberB");
+
+            let result = parseInt(inputA.value) * parseInt(inputB.value);
+            alert('Произведение ' + parseInt(inputA.value) + ' и ' + parseInt(inputB.value) + " равна " + result);
+        }
+
+        function ShowDel() {
+            let inputA = document.getElementById("NumberA");
+            let inputB = document.getElementById("NumberB");
+
+            let result = parseInt(inputA.value) / parseInt(inputB.value);
+            alert('Частное ' + parseInt(inputA.value) + ' и ' + parseInt(inputB.value) + " равно " + result);
+        }
+        </script>
     <style>
         .message {
+            cursor: pointer;
             border: 1px solid;
             border-radius: 5%;
-            display: inline-block;
+            background-color: rgba(255, 235, 205, 0.562);
             width: 150px;
             height: 50px;
-            position: relative;
-            text-align: center;
             margin-left: 15px;
-            background-color: rgba(255, 235, 205, 0.562);
-            cursor: pointer;
+            margin: 10px;
+            padding: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 350px;
         }
 
         .calc {
@@ -64,8 +99,13 @@
                 <label>Второе число: <input type="number" value="7891" id="NumberB"></label>
             </div>
             
-            <div class="message" onclick="ShowSumm()">Найти сумму введенных чисел</div>
-            <div class="message" onclick="ShowAuthor()">Узнать, кто автор страницы</div>
+           <div class="container">
+               <div class="message" onclick="ShowSumm()">Найти сумму введенных чисел</div>
+               <div class="message" onclick="ShowAuthor()">Узнать, кто автор страницы</div>
+               <div class="message" onclick="ShowRaz()">Найти разность чисел</div>
+               <div class="message" onclick="ShowProz()">Найти произведение</div>
+               <div class="message" onclick="ShowDel()">Найти частное 2-х чисел</div>
+           </div> 
         </main>
         <footer onclick="ShowDeviz()"> 
             <hr>
