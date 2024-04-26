@@ -10,9 +10,9 @@
     <link rel="icon" href="../favicon-32x32.png"> 
     <script>
         function blurChange() {
-            let value = document.getElementById('blurValue').value;
+            let value = document.getElementById('blurValue').value + '%';
             document.getElementById('blurOutput').innerText = value;
-            document.getElementById('blurImage').style.filter = 'hue-rotate(' + value + ')';
+            document.getElementById('blurImage').style.filter = 'invert(' + value + ')';
         }
     </script>
 </head>
@@ -21,8 +21,8 @@
         <header>Фильтры</header>
         <main>
             <div>
-                Фильтр hue-rotate:
-                <input type="range" min="0" max="20" value="0" onchange="blurChange()" id="blurValue">
+                Фильтр invert:
+                <input type="range" min="0" max="100" value="0" onchange="blurChange()" id="blurValue">
                 <span id="blurOutput"></span>
             </div>
             <div>
