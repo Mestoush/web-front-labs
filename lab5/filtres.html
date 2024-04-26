@@ -12,7 +12,7 @@
         function blurChange() {
             let value = document.getElementById('blurValue').value + '%';
             document.getElementById('blurOutput').innerText = value;
-            document.getElementById('blurImage').style.filter = 'invert(' + value + ')';
+            document.getElementById('blurImage').style.filter = 'saturate(' + value + ')';
         }
     </script>
 </head>
@@ -21,8 +21,8 @@
         <header>Фильтры</header>
         <main>
             <div>
-                Фильтр invert:
-                <input type="range" min="0" max="100" value="0" onchange="blurChange()" id="blurValue">
+                Фильтр saturate:
+                <input type="range" min="0" max="500" value="100" onchange="blurChange()" id="blurValue">
                 <span id="blurOutput"></span>
             </div>
             <div>
