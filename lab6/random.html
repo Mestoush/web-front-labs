@@ -55,6 +55,21 @@
             number = Math.floor(Math.random() * 100) + 1;
             count = 0;
         }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('show-rules-btn').addEventListener('click', function() {
+                document.getElementById('rules').style.display = 'block';
+                document.getElementById('show-rules-btn').style.display = 'none';
+                document.getElementById('hide-rules-btn').style.display = 'inline-block';
+            });
+
+            document.getElementById('hide-rules-btn').addEventListener('click', function() {
+                document.getElementById('rules').style.display = 'none';
+                document.getElementById('show-rules-btn').style.display = 'inline-block';
+                document.getElementById('hide-rules-btn').style.display = 'none';
+            });
+        });
+
     </script>
     
     <style>
@@ -93,6 +108,41 @@
         button:hover {
             background-color: #0056b3;
         }
+
+        .help-block {
+            width: 80%;
+            margin-top: 20px;
+            margin-left: 20px;
+            padding-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .help-block button {
+            margin-left: 20px;
+            padding: 10px 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .help-block button:hover {
+            background-color: #0056b3;
+        }
+
+        .help-block h2 {
+            margin-top: 0;
+        }
+
+        .help-block ol {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+
     </style>
 </head>
 <body>
@@ -126,6 +176,20 @@
                 </div>
             </div>
 
+            <div class="help-block">
+                <button id="show-rules-btn">Показать правила игры</button>
+                <button id="hide-rules-btn" style="display: none;">Скрыть правила игры</button>
+                <div id="rules" style="display: none;">
+                    <h2>Правила игры</h2>
+                    <ol>
+                        <li>Выберите число от 1 до 100.</li>
+                        <li>Нажмите кнопку "Угадать".</li>
+                        <li>Получите результат: больше или меньше задуманного числа.</li>
+                        <li>Продолжайте угадывать, пока не угадаете число.</li>
+                        <li>Поздравляем, если вы угадали число!</li>
+                    </ol>
+                </div>
+            </div>
         </main>
         <footer> 
             <hr>
