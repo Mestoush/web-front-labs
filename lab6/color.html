@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <script>
+        function ChangeColor(div) {
+            if(div.style.backgroundColor == 'yellow') {
+                div.style.backgroundColor = 'red';
+                document.getElementById('color-name').innerHTML = 'красный'
+            }
+            else if(div.style.backgroundColor == 'red') {
+                div.style.backgroundColor = 'black';
+                document.getElementById('color-name').innerHTML = 'черный'
+                document.getElementById('color').style.color = 'white'
+            }
+            else if(div.style.backgroundColor == 'black') {
+                div.style.backgroundColor = 'purple';
+                document.getElementById('color-name').innerHTML = 'фиолетовый'
+                document.getElementById('color').style.color = 'white'
+            }
+            else if(div.style.backgroundColor == 'purple') {
+                div.style.backgroundColor = 'pink';
+                document.getElementById('color-name').innerHTML = 'розоый'
+                document.getElementById('color').style.color = 'black'
+            }
+            else {
+                div.style.backgroundColor = 'yellow';
+                document.getElementById('color-name').innerHTML = 'желтый'
+                document.getElementById('color').style.color = 'black'
+            }
+        }
+    </script>
+    <style>
+        .color {
+            border: 1px solid;
+            width: 60%;
+            margin-left: 10px;
+            padding: 10px;
+            cursor: pointer;
+            background-color: yellow;
+            transition: 0.5s;
+        }
+
+        .color:hover {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>Перебор цветов</header>
+        <main>
+            <div class="color" ondblclick="ChangeColor(this)" id="color">
+                Цвет: <span id="color-name">желтый</span><br>
+                Сделайте двойной щелчок, чтобы изменить
+            </div>
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
