@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <script>
+        let number;
+        let count = 0;
+    
+        function StartGame() {
+            number = Math.floor(Math.random() * 100) + 1;
+            let screens = document.getElementsByClassName('game');
+            screens[0].style.display = 'none';
+            screens[1].style.display = 'block';
+        }
+    
+        function Guess() {
+            count++;
+            let input = document.getElementById('user-number');
+            let userNumber = parseInt(input.value);
+            let message = document.getElementById('result');
+    
+            if (input.value === '' || isNaN(userNumber)) {
+                message.innerHTML = 'Пожалуйста, введите корректное число!';
+                return;
+            }
+    
+            if (userNumber < 1 || userNumber > 100) {
+                message.innerHTML = 'Число должно быть в диапазоне от 1 до 100!';
+                return; 
+            }
+    
+            if (userNumber > number) {
+                message.innerHTML = 'Вы ввели слишком большое число';
+            } else if (userNumber < number) {
+                message.innerHTML = 'Вы ввели слишком маленькое число';
+            } else {
+                let screens = document.getElementsByClassName('game');
+                screens[1].style.display = 'none';
+                screens[2].style.display = 'block';
+                document.getElementById('number').innerHTML = number;
+                document.getElementById('try-count').innerHTML = count;
+            }
+        }
+    
+        function again() {
+            let screens = document.getElementsByClassName('game');
+            screens[2].style.display = 'none';
+            screens[1].style.display = 'block';
+            number = Math.floor(Math.random() * 100) + 1;
+            count = 0;
+        }
+    </script>
+    
+    <style>
+        .game {
+            margin: 10px auto;
+            padding-left: 20px;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+        }
+        .game > div {
+            margin-top: 10px;
+        }
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>Угадай число</header>
+        <main>
+            <div class="game" onclick="StartGame()">
+                <button>Сыграть в игру</button>
+            </div>
+            
+            <div class="game" style="display: none;">
+                <h1>Угадай число</h1>
+                <div>
+                    Задумано число от 1 до 100. Угадайте, какое?<br>
+                    <input type="number" value="" min="1" max="100" id="user-number"><br>
+                    <button onclick="Guess()">Угадать</button>
+                    <div id="result"></div>
+                </div>
+            </div>
+
+            <div class="game" style="display: none;">
+                <h1>Поздравляем, вы выиграли!</h1>
+                <div>
+                    Задуманное число: <span id="number"></span>
+                </div>
+                <div>
+                    Количество попыток: <span id="try-count"></span>
+                </div>
+                <div>
+                    <button onclick="again()">Сыграть еще раз</button>
+                </div>
+            </div>
+
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
