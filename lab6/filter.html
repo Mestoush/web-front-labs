@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 6</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        img {
+            width: 80%;
+        }
+    </style>
+    <script>
+        function Otobr() {
+            let color = document.getElementById('wear-color').value;
+            let type = document.getElementById('wear-type').value;
+            let wear = document.getElementById('wear');
+    
+            if(color == "Красный" && type == "Футболка") {
+                wear.src = "t-shirts/red-f.jpg";
+            }
+    
+            else if(color == "Красный" && type == "Поло") {
+                wear.src = "t-shirts/red-p.jpg";
+            }
+    
+            else if(color == "Красный" && type == "Майка") {
+                wear.src = "t-shirts/red-m.jpg";
+            }
+    
+            else if(color == "Черный" && type == "Футболка") {
+                wear.src = "t-shirts/black-f.jpg";
+            }
+    
+            else if(color == "Черный" && type == "Поло") {
+                wear.src = "t-shirts/black-p.jpg";
+            }
+    
+            else if(color == "Черный" && type == "Майка") {
+                wear.src = "t-shirts/black-m.jpg";
+            }
+    
+            else if(color == "Белый" && type == "Футболка") {
+                wear.src = "t-shirts/white-f.jpg";
+            }
+    
+            else if(color == "Белый" && type == "Поло") {
+                wear.src = "t-shirts/white-p.jpg";
+            }
+    
+            else {
+                wear.src = "t-shirts/white-m.jpg";
+            }
+        }
+    </script> 
+</head>
+<body>
+    <div class="main">
+        <header>Лабораторная работа 6</header>
+        <main>
+            
+            <div>
+                Цвет одежды:
+                <select id="wear-color">
+                    <option value="Красный">Красный</option>
+                    <option value="Белый">Белый</option>
+                    <option value="Черный">Черный</option>
+                </select><br>
+
+                Тип одежды:
+                <select id="wear-type">
+                    <option value="Футболка">Футболка</option>
+                    <option value="Поло">Поло</option>
+                    <option value="Майка">Майка</option>
+                </select><br>
+
+                <button onclick="Otobr()">OK</button><br>
+
+                <img id="wear">
+
+            </div>
+
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
