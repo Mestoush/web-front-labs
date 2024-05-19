@@ -19,6 +19,28 @@
 
             document.querySelector('main').appendChild(newBlock);
         }
+
+        function addNewBlocks() {
+            let main = document.querySelector('main');
+            let blockCount = parseInt(document.getElementById('blockCount').value);
+
+            for (let i = 0; i < blockCount; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.backgroundColor = 'green';
+                newBlock.style.height = '40px';
+                newBlock.style.margin = '5px';
+                newBlock.style.border = '1px solid';
+                newBlock.style.borderColor = 'red';
+                newBlock.style.color = 'white';
+                
+                // Устанавливаем ширину блока
+                newBlock.style.width = (150 + i * 10) + 'px';
+
+                newBlock.innerHTML = `Блок № ${i + 1}: 2*${i}<sup>2</sup> = ${2 * i ** 2}`;
+
+                main.appendChild(newBlock);
+            }
+        }
     </script>
     <style>
 
@@ -28,7 +50,9 @@
     <div class="main">
         <header>Лабораторная работа 7</header>
         <main>
-            <button onclick="addNewBlock()">Добавить блок</button>
+            <button onclick="addNewBlock()">Добавить блок</button> <br>
+            <button onclick="addNewBlocks()">Добавить блоки в количестве:</button>
+            <input type="number" id="blockCount" min="1" value="10">
         </main>
         <footer> 
             <hr>
