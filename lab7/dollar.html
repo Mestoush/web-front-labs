@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <script>
+        function showExchange() {
+            const exchange = [
+                89.7026, 90.2486, 90.1887, 90.4082, 90.6537, 90.9873, 90.4082, 90.6537, 90.9873, 91.3591
+            ]
+            let table = document.getElementById('dollar-table');
+            for(let i = 0; i < exchange.length; i++) {
+                let tr = document.createElement('tr');
+                let td = document.createElement('td');
+                td.innerText = exchange[i];
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+
+            let sum = 0;
+            for(let i = 0; i < exchange.length; i++) {
+                sum += exchange[i];
+            }
+            let average = sum / exchange.length
+            average = average.toFixed(2);
+
+            let detail = document.getElementById('detail');
+            detail.innerText = 'Среднее значение курса: ' + average;
+
+            let button = document.querySelector('button');
+            button.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <header>Лабораторная работа 7</header>
+        <main>
+            <button onclick="showExchange()">Курс доллара</button>
+            <table border="1" id='dollar-table'></table>
+            <div id="detail"></div>
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
