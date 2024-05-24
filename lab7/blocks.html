@@ -52,9 +52,30 @@
                 newBlock.style.backgroundColor = 'purple';
                 newBlock.style.color = 'white';
                 newBlock.style.margin = '5px';
-                newBlock.style.padding = '1px';
+                newBlock.style.padding = '2px';
 
                 newBlock.innerHTML = `${i}`
+
+                main.appendChild(newBlock);
+            }
+        }
+
+        function circle10_80() {
+            let main = document.querySelector('main');
+            for(let i = 10; i >= -80; i -= 3) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '20px';
+                newBlock.style.height = '20px';
+                newBlock.style.borderRadius = '50%';
+                newBlock.style.display = 'inline-block';
+                newBlock.style.backgroundColor = 'blue';
+                newBlock.style.color = 'white';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.lineHeight = '20px';
+                newBlock.style.margin = '5px';
+                newBlock.style.fontSize = '11px'
+
+                newBlock.innerHTML = `${i}`;
 
                 main.appendChild(newBlock);
             }
@@ -72,7 +93,7 @@
             <button onclick="addNewBlocks()">Добавить блоки в количестве:</button>
             <input type="number" id="blockCount" min="1" value="10"> <br>
             <button onclick="add20_50()">> 20 => 50</button>
-
+            <button onclick="circle10_80()">10 => -80</button>
         </main>
         <footer> 
             <hr>
