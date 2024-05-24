@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <script>
+         function showStock() {
+            const dates = ["15.05.2024", "16.05.2024", "17.05.2024", "18.05.2024", "19.05.2024", "20.05.2024", "21.05.2024", "22.05.2024", "23.05.2024", "24.05.2024"];
+            const stockPrices = [221.42, 222.74, 213.72, 215.94, 217.88, 220.10, 223.50, 224.50, 225.00, 219.80];
+            
+            let table = document.createElement('table');
+            let thead = document.createElement('thead');
+            let tbody = document.createElement('tbody');
+
+            let headerRow = document.createElement('tr');
+            let headerDate = document.createElement('th');
+            headerDate.textContent = 'Дата';
+            let headerPrice = document.createElement('th');
+            headerPrice.textContent = 'Цена акций';
+            let headerDifference = document.createElement('th');
+            headerDifference.textContent = 'Разница';
+
+            headerRow.appendChild(headerDate);
+            headerRow.appendChild(headerPrice);
+            headerRow.appendChild(headerDifference);
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+            
+            let sum = 0;
+            let maxPrice = Number.MIN_VALUE;
+            let minPrice = Number.MAX_VALUE;
+            for (let i = 0; i < stockPrices.length; i++) {
+                let row = document.createElement('tr');
+                let Date = document.createElement('td');
+                Date.textContent = dates[i];
+                let Price = document.createElement('td');
+                Price.textContent = stockPrices[i];
+                let Difference = document.createElement('td');
+                if (i > 0) {
+                    let difference = stockPrices[i] - stockPrices[i - 1];
+                    Difference.textContent = difference.toFixed(2);
+                    sum += stockPrices[i];
+                    if (stockPrices[i] > maxPrice) {
+                        maxPrice = stockPrices[i];
+                    }
+                    if (stockPrices[i] < minPrice) {
+                        minPrice = stockPrices[i];
+                    }
+                } else {
+                    Difference.textContent = '-';
+                }
+
+                row.appendChild(Date);
+                row.appendChild(Price);
+                row.appendChild(Difference);
+                tbody.appendChild(row);
+            }
+
+            table.appendChild(tbody);
+            document.querySelector('main').appendChild(table);
+            table.setAttribute('border', '1');
+
+            let average = sum / stockPrices.length;
+            average = average.toFixed(2);
+            let max = maxPrice.toFixed(2);
+            let min = minPrice.toFixed(2);
+
+            let details = document.createElement('div');
+            details.innerHTML = `
+                <p>Среднее значение стоимости акции: ${average}</p>
+                <p>Максимальное значение стоимости акции: ${max}</p>
+                <p>Минимальное значение стоимости акции: ${min}</p>
+            `;
+            document.querySelector('main').appendChild(details);
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <header>Котировки компании ТМК</header>
+        <main>
+            <button onclick="showStock()">Курс акций ТМК</button>
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
