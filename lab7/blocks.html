@@ -80,6 +80,28 @@
                 main.appendChild(newBlock);
             }
         }
+
+        function addOpacityBlocks() {
+            let main = document.querySelector('main');
+            for(let i = 1; i <= 10; i++) {
+                let newBlock = document.createElement('div');
+                newBlock.style.width = '40px';
+                newBlock.style.height = '40px';
+                newBlock.style.backgroundColor = 'blue';
+                newBlock.style.margin = '5px';
+                newBlock.style.color = 'white';
+                newBlock.style.display = 'inline-block';
+                newBlock.style.textAlign = 'center';
+                newBlock.style.lineHeight = '40px';
+                newBlock.style.display = 'block';
+
+                newBlock.style.opacity = i / 10;
+
+                newBlock.innerHTML = `${i}`;
+
+                main.appendChild(newBlock);
+            }
+        }
     </script>
     <style>
 
@@ -93,7 +115,8 @@
             <button onclick="addNewBlocks()">Добавить блоки в количестве:</button>
             <input type="number" id="blockCount" min="1" value="10"> <br>
             <button onclick="add20_50()">> 20 => 50</button>
-            <button onclick="circle10_80()">10 => -80</button>
+            <button onclick="circle10_80()">10 => -80</button> <br>
+            <button onclick="addOpacityBlocks()">Добавить блоки с opacity</button>
         </main>
         <footer> 
             <hr>
