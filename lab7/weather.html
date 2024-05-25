@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <style>
+        .weather-info {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            margin-left: 20px;
+            font-family: Arial, sans-serif;
+            width: 350px;
+        }
+        .weather-info h2 {
+            margin: 0 0 10px 0;
+        }
+        .weather-info p {
+            margin: 5px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+    <script>
+        function getWeather() {
+            const today = new Date().toISOString().split('T')[0]; // Получаем сегодняшнюю дату
+            const url = `https://api.open-meteo.com/v1/forecast?latitude=55.7558&longitude=37.6176&hourly=temperature_2m&start_date=${today}&end_date=${today}`;
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(data) {
+                    const hourly = data.hourly.time;
+                    const temperatures = data.hourly.temperature_2m;
+
+                    const times = {
+                        '08:00': null,
+                        '12:00': null,
+                        '20:00': null
+                    };
+
+                    hourly.forEach((time, index) => {
+                        const hour = time.split('T')[1].substring(0, 5);
+                        if (times.hasOwnProperty(hour)) { // Эта проверка гарантирует, что обрабатываются только интересующие нас часы
+                            times[hour] = temperatures[index];
+                        }
+                    });
+
+                    const rateInfo = document.getElementById('rate-info');
+                    rateInfo.innerHTML = `
+                        <div class="weather-info">
+                            <h2>Температура на сегодня</h2>
+                            <p>8:00: ${times['08:00'] + ' °C'}</p>
+                            <p>12:00: ${times['12:00'] + ' °C'}</p>
+                            <p>20:00: ${times['20:00'] + ' °C'}</p>
+                        </div>
+                    `;
+                })
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <header>Прогноз погоды</header>
+        <main>
+            <button onclick="getWeather()">Получить погоду на 8 утра, 12 дня и 20 часов вечера</button>
+            <div id="rate-info"></div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
