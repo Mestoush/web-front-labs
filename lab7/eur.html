@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 7</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <style>
+        .exchange-rate {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            margin-left: 20px;
+            font-family: Arial, sans-serif;
+            width: 350px;
+        }
+        .exchange-rate h2 {
+            margin: 0 0 10px 0;
+        }
+        .exchange-rate p {
+            margin: 5px 0;
+        }
+        .increase {
+            color: green;
+        }
+        .decrease {
+            color: red;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+    <script>
+        function getEuroExchangeRate() {
+            const url = "https://www.cbr-xml-daily.ru/daily_json.js";
+            fetch(url)
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(json) {
+                    const euro = json.Valute.EUR;
+                    const currentRate = euro.Value;
+                    const previousRate = euro.Previous;
+                    const date = json.Date.split('T')[0];
+                    const difference = currentRate - previousRate;
+                    const isIncrease = difference > 0;
+                    const rateDiff = isIncrease ? 'поднялся' : 'опустился';
+                    
+                    const message = `
+                        <div class="exchange-rate">
+                            <h2>Курс евро на ${date}</h2>
+                            <p>Текущий курс: ${currentRate.toFixed(2)} руб.</p>
+                            <p>Курс за предыдущий день: ${previousRate.toFixed(2)} руб.</p>
+                            <p>Разница: <span class="${isIncrease ? 'increase' : 'decrease'}">${difference.toFixed(2)} руб.</span> (${rateDiff})</p>
+                            <p>Источник: <a href="https://www.cbr-xml-daily.ru/" target="_blank">ЦБР API</a></p>
+                        </div>
+                    `;
+
+                    document.getElementById('rate-info').innerHTML = message;
+                });
+        }
+    </script>
+</head>
+<body>
+    <div class="main">
+        <header>Курс евро</header>
+        <main>
+            <a href="https://www.cbr-xml-daily.ru/">Курсы валют, API</a>
+            <button onclick="getEuroExchangeRate()">Получить курс евро</button>
+            <div id="rate-info"></div>
+        </main>
+        <footer>
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>   
+</body>
+</html>
