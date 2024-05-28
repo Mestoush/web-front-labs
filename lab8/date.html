@@ -10,7 +10,7 @@
     <link rel="icon" href="../favicon-32x32.png"> 
     <script src="lab8.js"></script>
     <style>
-        .current-date {
+        main {
             margin-left: 10px;
         }
     </style>
@@ -19,7 +19,18 @@
     <div class="main">
         <header>Лабораторная работа 8</header>
         <main>
-            <div class="current-date" id="current-date"></div>
+            <div id="current-date"></div>
+            <div>
+                <h2>Определение дня недели</h2>
+                <label for="input-day">День: </label>
+                <input type="number" id="input-day" min="1" max="31"><br>
+                <label for="input-month">Месяц: </label>
+                <input type="number" id="input-month" min="1" max="12"><br>
+                <label for="input-year">Год: </label>
+                <input type="number" id="input-year"><br>
+                <button onclick="calculateDayOfWeek()">День недели</button>
+                <p id="result"></p>
+            </div>
         </main>
         <footer> 
             <hr>

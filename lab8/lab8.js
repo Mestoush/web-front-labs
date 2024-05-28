@@ -29,3 +29,12 @@ function showDate() {
         `
 }
 
+function calculateDayOfWeek() {
+    let day = document.getElementById('input-day').value;
+    let month = document.getElementById('input-month').value;
+    let year = document.getElementById('input-year').value;
+
+    let inputDate = new Date(year, month - 1, day); 
+    let dayOfWeek = inputDate.toLocaleString('default', { weekday: 'long' });
+    document.getElementById('result').innerText = `День недели: ${dayOfWeek}`;
+}
