@@ -14,12 +14,24 @@
             right: 0;
             padding: 10px;
         }
-        
+
         .big-time {
             font-size: 3em;
             text-align: center;
-            margin-top: 50vh;
+            margin-top: 30vh;
             transform: translateY(-50%);
+        }
+
+        .second-hand {
+            position: absolute;
+            left: 50%;
+            width: 5px;
+            height: 100px;
+            background-color: #ff0000;
+            position: absolute;
+            top: 50%;
+            transform-origin: bottom;
+            transition: transform 0.5s ease-in-out;
         }
     </style>
     <script src="time.js"></script>
@@ -32,6 +44,7 @@
         </header>
         <main>
             <div class="big-time" id="bigTime"></div>
+            <div class="second-hand" id="secondHand"></div>
         </main>
         <footer> 
             <hr>
