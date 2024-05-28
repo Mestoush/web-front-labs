@@ -13,6 +13,6 @@ function showDate() {
 
     locales.forEach(({locale, name}) => {
         let dateString = today.toLocaleString(locale);
-        out.innerHTML += `<p>Дата и время для страны ${name} (${locale}): ${dateString}</p>`;
+        out.innerHTML += `<p>Дата и время для страны ${name}: ${dateString}</p>`;
     });
 }
