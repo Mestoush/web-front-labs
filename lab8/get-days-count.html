@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 8</title>
+    <link rel="stylesheet" href="../main.css">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon-16x16.png">
+    <link rel="icon" href="../favicon-32x32.png"> 
+    <script src="showDate.js"></script>
+    <style>
+        .main {
+            text-align: center;
+        }
+        input[type="date"], button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+        button {
+            cursor: pointer;
+            background-color: rgba(0, 0, 255, 0.747);
+            border-radius: 10px;
+            color: white;
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <header>Лабораторная работа 8</header>
+        <main>
+            <div>
+                <label>Дата рождения: <input type="date"></label>
+            </div>
+            <div>
+                <button onclick="showDaysCount()">Показать число дней</button>
+                <button onclick="clearDate()">Очистить</button>
+            </div>
+            <div id="output"></div>
+        </main>
+        <footer> 
+            <hr>
+            &copy; Червоняк Денис, ФБИ-24, 2 курс, 2024
+        </footer>
+    </div>  
+</body>
+</html>
