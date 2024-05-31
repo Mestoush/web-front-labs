@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курс валют - ГазТрансБанк</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="exchange.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="exchange.js"></script>
+</head>
+<body onload="ExchangeRate()">
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt="Логотип ГазТрансБанк"></a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">О компании</a></li>
+                <li><a href="news.html">Новости</a></li>
+                <li><a href="exchange.html">Курс валют</a></li>
+                <li><a href="contacts.html">Контактные данные</a></li>
+                <li><a href="video.html">Видео</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main_page">
+        <div class="exchange_block">
+            <h1>Курс валют</h1>
+            <div class="exchange-rates" id="rate-info"></div>
+        </div>
+
+        <div class="calculator">
+            <h2>Калькулятор валют</h2>
+            <div class="calc-input">
+                <label for="amount">Сумма:</label>
+                <input type="number" id="amount" placeholder="Введите сумму">
+            </div>
+            <div class="calc-select">
+                <label for="direction">Направление перевода:</label>
+                <select id="direction">
+                    <option value="toKZT">Рубли в Тенге</option>
+                    <option value="toRUB">Тенге в Рубли</option>
+                </select>
+            </div>
+            <div class="calc-buttons">
+                <button onclick="convertCurrency()">Конвертировать</button>
+            </div>
+            <div class="calc-result">
+                <h3>Результат:</h3>
+                <p id="result">0</p>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy; ООО КБ "ГТ банк", 2007 - 2024</p>
+        <p>Коммерческий банк "Газтрансбанк" (Общество с ограниченной ответственностью)</p>
+    </footer>
+</body>
+</html>
